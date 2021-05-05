@@ -1,5 +1,5 @@
-import styled from '../themes';
-import * as LogoSvgs from '../res/logos';
+import styled from 'themes';
+import * as LogoSvgs from 'logoRes';
 
 export type IconProps = {
   name: keyof typeof LogoSvgs

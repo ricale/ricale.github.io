@@ -1,5 +1,5 @@
-import { MainPage } from './pages';
-import { GlobalStyle, ThemeProvider, normalTheme } from './themes';
+import { MainPage } from 'pages';
+import { GlobalStyle, ThemeProvider, normalTheme } from 'themes';
 
 function App() {
   return (

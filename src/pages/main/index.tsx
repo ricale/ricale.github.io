@@ -1,5 +1,5 @@
-import styled from '../../themes';
-import { IconLink } from '../../components';
+import styled from 'themes';
+import { IconLink } from 'components';
 
 const Container = styled.div`
   display: flex;
