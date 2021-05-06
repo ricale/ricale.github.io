@@ -29,6 +29,13 @@ const text = {
   body1:   { fontSize: '1rem' },
   body2:   { fontSize: '0.875rem' },
   caption: { fontSize: '0.75rem' },
+
+  mobile: {
+    name: {
+      fontSize: '4rem',
+      fontFamily: 'monospace',
+    }
+  }
 };
 
 export interface NormalTheme extends DefaultTheme  {
