@@ -1,54 +1,42 @@
-import styled from 'themes';
-import { IconLink } from 'components';
+// import { useCallback, useEffect, useRef, useState } from 'react';
 
-const Container = styled.div`
+import styled, { css } from 'themes';
+
+import Links from './Links';
+import MyName from './MyName';
+
+type ContainerProps = {
+  height?: number
+}
+const Container = styled.div<ContainerProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   height: 100%;
-  padding-left: ${p => p.theme.dimens.bigMargin};
-  color: white;
+  /* ${p => p.height && css`
+    height: ${p.height}px;
+  `} */
+  transition: height 0.2s ease-in-out;
 `;
-const Name = styled.h1`
-  ${p => p.theme.text.name}
-`;
-const Links = styled.div`
-  display: flex;
-  flex-direction: row;
 
-  & > *:not(:first-child) {
-    margin-left: ${p => p.theme.dimens.gutter};
-  }
+const Plate = styled.div`
 `;
 
 const MainPage = () => {
+  // const plateRef = useRef<HTMLDivElement>(null);
+  // const [height, setHeight] = useState<number>();
+
+  // const onClick = useCallback(() => {
+  //   setHeight(plateRef.current?.clientHeight || 0)
+  // }, [plateRef]);
+
   return (
-    <Container>
-      <Name>
-        ricale
-      </Name>
-      <Links>
-        <IconLink
-          name='github'
-          href='https://github.com/ricale'
-          target='_blank'
-          />
-        <IconLink
-          name='velog'
-          href='https://velog.io/@ricale'
-          target='_blank'
-          />
-        <IconLink
-          name='linkedin'
-          href='https://www.linkedin.com/in/ricale/'
-          target='_blank'
-          />
-        <IconLink
-          name='mail'
-          href="mailto:kim.kangseong@gmail.com"
-          />
-      </Links>
+    <Container /*height={height}*/>
+      <Plate /*ref={plateRef}*/>
+        <MyName /*onClick={onClick}*/ />
+        <Links />
+      </Plate>
     </Container>
   )
 }

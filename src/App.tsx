@@ -1,11 +1,11 @@
 import { MainPage } from 'pages';
-import { GlobalStyle, ThemeProvider, normalTheme } from 'themes';
+import { GlobalStyle, ThemeProvider, normalTheme, media } from 'themes';
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={normalTheme}>
+      <ThemeProvider theme={{ ...normalTheme, media }}>
         <MainPage />
       </ThemeProvider>
     </>
