@@ -4,6 +4,7 @@ import { IconLink } from 'components';
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
 
   & > *:not(:first-child) {
     margin-left: ${p => p.theme.dimens.gutter};

@@ -1,10 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import styled, { css } from 'themes';
 
-type ContainerProps = {
-  clicked: boolean
-}
-const Container = styled.span<ContainerProps>`
+const Container = styled.span`
   /* user-select: none; */
   position: relative;
   &:hover {
@@ -23,40 +20,56 @@ const Overed = styled.span`
 type MouseOverAnimProps = {
   label: string
   content: string
+  onClick: () => void
 }
 const AnimOnClick = ({
   label,
   content,
+  onClick: _onClick,
 }: MouseOverAnimProps) => {
-  const [clicked, setClicked] = useState(false);
+  const [anim, setAnim] = useState<'typing' | 'blinking' | 'deleting'>();
   const [animIndex, setAnimIndex] = useState(1);
 
   useEffect(() => {
-    if(clicked) {
+    if(anim === 'typing') {
       let interval = setInterval(() => {
         setAnimIndex(idx => {
           if(idx < content.length) {
             return idx + 1;
           } else {
             clearInterval(interval);
+            setAnim('deleting');
+            return idx;
+          }
+        });
+      }, 50);
+
+    } else if(anim === 'blinking') {
+
+    } else if(anim === 'deleting') {
+      let interval = setInterval(() => {
+        setAnimIndex(idx => {
+          if(idx > 0) {
+            return idx - 1;
+          } else {
+            clearInterval(interval);
+            setAnim(undefined);
             return idx;
           }
         });
       }, 50);
     }
-  }, [content, clicked]);
+  }, [content, anim]);
 
   const onClick = useCallback(() => {
-    setClicked(true);
+    setAnim('typing');    
   }, []);
 
   
   return (
-    <Container
-      onClick={onClick}
-      clicked={clicked}>
+    <Container onClick={onClick}>
       {label}
-      {clicked &&
+      {anim &&
         <Overed>
           {content.slice(0, animIndex)}
         </Overed>
