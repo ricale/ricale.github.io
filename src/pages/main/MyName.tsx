@@ -1,3 +1,4 @@
+import { Tooltip } from 'components';
 import styled from 'themes';
 // import { AnimOnClick } from 'components';
 
@@ -18,12 +19,9 @@ const MyName = ({
 }: MyNameProps) => {
   return (
     <Container>
-      {/* r<AnimOnClick
-        label='i'
-        content='introduction'
-        onClick={onClick}
-        />cale */}
-      ricale
+      <Tooltip content='test' delay={500}>
+        <span>ricale</span>
+      </Tooltip>
     </Container>
   );
 }

@@ -39,6 +39,9 @@ const getGlobalStyle = (theme: NormalTheme) => createGlobalStyle`
     a:hover {
         color: ${theme.colors.colorPirmary};
     }
+    a:active {
+        color: ${theme.colors.colorPirmary};
+    }
 
     html,
     body {
