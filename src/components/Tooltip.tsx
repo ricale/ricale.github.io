@@ -19,7 +19,7 @@ const Tooltip = ({
 
   const [showContent, setShowContent] = useState<boolean>();
   useEffect(() => {
-    let timeout;
+    let timeout: NodeJS.Timeout | null = null;
     if(overed) {
       if(delay) {
         timeout = setTimeout(() => setShowContent(true), delay);
@@ -32,6 +32,10 @@ const Tooltip = ({
       timeout = null;
       setShowContent(false);
     }
+
+    return () => {
+      timeout && clearTimeout(timeout);
+    }
   }, [overed, delay]);
 
   const contentStyle: React.CSSProperties = useMemo(() => ({
@@ -42,7 +46,7 @@ const Tooltip = ({
   }), [showContent]);
 
   const childStyle = useMemo(() => {
-    const { style } = child.props;
+    const style = child.props.style;
     return ({
       ...(style || {}),
       ...(!style?.position || style.position === 'static' ? {

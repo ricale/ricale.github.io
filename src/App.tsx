@@ -1,4 +1,4 @@
-import { MainPage } from 'pages';
+import AppRouter from 'router';
 import { GlobalStyle, ThemeProvider, normalTheme, media } from 'themes';
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
     <>
       <GlobalStyle />
       <ThemeProvider theme={{ ...normalTheme, media }}>
-        <MainPage />
+        <AppRouter />
       </ThemeProvider>
     </>
   );

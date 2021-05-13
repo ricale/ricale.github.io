@@ -24,6 +24,7 @@
       "components": ["src/components"],
       "logoRes": ["src/res/logos"],
       "pages": ["src/pages"],
+      "router": ["src/router"],
       "themes": ["src/themes"]
     }
   },

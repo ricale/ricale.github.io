@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import styled, { css } from 'themes';
+import styled from 'themes';
 
 const Container = styled.span`
   /* user-select: none; */
