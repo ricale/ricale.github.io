@@ -7,6 +7,7 @@ const AppRouter = () => {
       <Switch>
         <Route path='/' exact component={pages.MainPage} />
         <Route path='/profile' exact component={pages.ProfilePage} />
+        <Route path='/posts/:id' exact component={pages.PostDetailPage} />
       </Switch>
     </Router>
   )
