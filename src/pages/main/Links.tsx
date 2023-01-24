@@ -17,21 +17,22 @@ const Links = () => {
       <IconLink
         name='github'
         href='https://github.com/ricale'
-        target='_blank'
+        title="깃헙"
         />
       <IconLink
-        name='velog'
-        href='https://velog.io/@ricale'
-        target='_blank'
+        name='gatsby'
+        href='https://ricale.kr/blog/'
+        title="블로그"
         />
       <IconLink
         name='linkedin'
         href='https://www.linkedin.com/in/ricale/'
-        target='_blank'
+        title="링크드인"
         />
       <IconLink
         name='mail'
         href="mailto:kim.kangseong@gmail.com"
+        title="메일"
         />
     </Container>
   )
