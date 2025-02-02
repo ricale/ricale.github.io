@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-family: monospace, monospace;
+
+  @media (max-width: 768px) {
+    font-size: 4rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 8rem;
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.link {
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 0;
+}
+
+.link:hover {
+  background-color: gray;
+}
